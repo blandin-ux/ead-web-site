@@ -49,4 +49,9 @@ Route::get('/emploie/open/{id}','Local\EmploieController@open')->middleware('aut
 Route::get('/emploie/close/{id}','Local\EmploieController@close')->middleware('auth');
 //fin route
 
+//route des slides
+Route::get('/slides','Local\SlideController@index')->middleware('auth');
+Route::get('/slides/create','Local\SlideController@create')->middleware('auth');
+Route::post('slides','Local\EmploieController@store')->middleware('auth');
+//fin route slides
 //startbootstrap.com licen gpl apach
