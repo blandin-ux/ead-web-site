@@ -11,7 +11,7 @@ class SlideController extends Controller
     //
     public function index(){
         $slide = Slide::all();
-        return view('Local/Slide/index')->with(compact('slide'));;
+        return view('Local/Slide/index')->with(compact('slide'));
     }
     public function create(){
         $slide = Slide::all();
@@ -23,10 +23,7 @@ class SlideController extends Controller
          $slide = new Slide();
          $slide->titre=$request->titre;
          $slide->stitre=$request->stitre;
-         $slide->actif=$request->actif;
-         $slide->image_uri=$request->image_uri;
-         dd($slide);
-
+         //dd($slide);
 if($request->image_uri){
             $fichier = $request->image_uri;
             $ext_array= ['png','jpg','jpeg','gif'];
@@ -34,17 +31,17 @@ if($request->image_uri){
             //dd($ext);
             if (in_array($ext,$ext_array)){
                 //dd('ext ok');
-                if(!file_exists(public_image_uri().'/fichiers')){
-                    mkdir(public_image_uri().'/fichiers');
+                if(!file_exists(public_path().'/fichiers')){
+                    mkdir(public_path().'/fichiers');
                 }
-                if(!file_exists(public_image_uri().'/fichiers/Slides')){
-                    mkdir(public_image_uri().'/fichiers/Slides');
+                if(!file_exists(public_path().'/fichiers/Slides')){
+                    mkdir(public_path().'/fichiers/Slides');
                 }
 
                 $name = date('dmYhis').'.'.$ext;
-                $image_uri = 'fichiers/Slides/'. $name;
-                $fichier->move(public_image_uri('fichiers/Slides'),$name);
-                $slide->image_uri = $image_uri;
+                $path = 'fichiers/Slides/'. $name;
+                $fichier->move(public_path('fichiers/Slides'),$name);
+                $slide->image_uri = $path;
                 //dd($slide);
 
             }
@@ -53,13 +50,61 @@ if($request->image_uri){
 
          $slide->save();
          return redirect('/slides');
+
     }
 
-    public function show($id){
-        $slide = Slide::find($id);
-        return view('/Local/Slide/show')->with(compact('slide'));;
+        public function edit($id){
+            $slide = Slide::find($id);
+            return view('Local/Slide/edit')->with(compact('slide'));
+        }
+
+        public function save(Request $request){
+            $slide = Slide::find($request->id);
+            $slide->titre=$request->titre;
+            $slide->stitre=$request->stitre;
+         //dd($slide);
+        if($request->image_uri){
+            $fichier = $request->image_uri;
+            $ext_array= ['png','jpg','jpeg','gif'];
+            $ext = $fichier->getClientOriginalExtension();
+            //dd($ext);
+            if (in_array($ext,$ext_array)){
+                //dd('ext ok');
+                if(!file_exists(public_path().'/fichiers')){
+                    mkdir(public_path().'/fichiers');
+                }
+                if(!file_exists(public_path().'/fichiers/Slides')){
+                    mkdir(public_path().'/fichiers/Slides');
+                }
+
+                $name = date('dmYhis').'.'.$ext;
+                $path = 'fichiers/Slides/'. $name;
+                $fichier->move(public_path('fichiers/Slides'),$name);
+                $slide->image_uri = $path;
+                //dd($slide);
+
+            }
+        }
+        //dd('ext not ok');
+
+         $slide->save();
+         return redirect('/slides');
+
     }
-    
-  
+
+    public function open($id){
+        $slide = Slide::find($id);
+        $slide->actif=1;
+        //dd($slide);
+        $slide->save();
+        return redirect('/slides');
+    }
+     public function close($id){
+        $slide = Slide::find($id);
+        $slide->actif=0;
+        //dd($slide);
+        $slide->save();
+        return redirect('/slides');
+    }
 }
 

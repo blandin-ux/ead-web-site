@@ -52,6 +52,10 @@ Route::get('/emploie/close/{id}','Local\EmploieController@close')->middleware('a
 //route des slides
 Route::get('/slides','Local\SlideController@index')->middleware('auth');
 Route::get('/slides/create','Local\SlideController@create')->middleware('auth');
-Route::post('slides','Local\EmploieController@store')->middleware('auth');
+Route::post('slides','Local\SlideController@store')->middleware('auth');
+Route::get('/slides/{id}/edit','Local\SlideController@edit')->middleware('auth');
+Route::post('/slides/save','Local\SlideController@save')->middleware('auth');
+Route::get('/slides/{id}/open','Local\SlideController@open')->middleware('auth');
+Route::get('slides/{id}/close','Local\SlideController@close')->middleware('auth');
 //fin route slides
 //startbootstrap.com licen gpl apach

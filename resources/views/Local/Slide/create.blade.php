@@ -20,11 +20,10 @@
                     <div class="form-group">
                             <label for="file">Image</label>
                             <input type="file" name="image_uri" id="file" class="form-control" required>                         
-                    </div>     
-                       
-                 </div>
-                 <button class="btn btn-danger btn-xs" > Envoyer </button>
-             </div>       
+                                 </div>
+                 <button class="btn btn-danger btn-xs" > Envoyer </button>    
+    
+                </div>                            
            </form>
        </div>
 </html>
