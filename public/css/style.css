@@ -1,0 +1,99 @@
+#cadre1{
+        background-color: lightblue;
+        border-radius: 2%;
+        max-width: 500px;
+        margin: 10px auto;
+        /*margin-left: 300px;*/
+}
+#cadre2{
+        background-color: lightblue;
+        border-radius: 2%;
+        max-width: 610px;
+        margin: 10px auto;
+        /*margin-left: 300px;*/
+}
+#corpsmsg{
+        background-color: aquamarine;
+        font-size: 15px;
+        border-radius: 10px 20px 20px 10px;  
+        font-family: consolas;
+        box-shadow: 0px 2px 20px aquamarine;
+}
+#corpsmsgl{
+        background-color: white;
+        font-size: 15px;
+        border-radius: 10px 20px 20px 10px;  
+        font-family: consolas;
+}
+#type1{
+        background-color: gainsboro;
+        font-weight: bold;
+        color: black;
+        letter-spacing: 1px;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 1px;
+        padding: 0px 2px 0px 2px;
+}
+#objet1{
+        background-color: lightcoral;
+        letter-spacing: 1px;
+        border-radius: 5px;  
+        font-size: 15px;
+        text-align: center; 
+        padding: 2px 2px 2px 2px; 
+}
+#reponse1{
+        background-color: darkslategray;
+        color: white;
+        font-family: consolas;
+        font-size: 15px;
+        border-radius: 25px;
+        box-shadow: 0px 2px 20px darkslategray;  
+        margin-bottom: 4px;
+}
+#reponse2{
+        background-color: whitesmoke;
+        color: black;
+        font-family: consolas;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-bottom: 4px;
+        margin: 5px auto;
+}
+#detail{
+      font-size: 22px;
+      font-weight: bold;
+      font-family: consolas;
+      letter-spacing: 1px;
+      padding-top: 9px;
+      color: black;
+}
+#oh4{
+      font-size: 15px;
+      color: black;
+      font-weight: unset;
+}
+#h5{
+    font-size: 15px;
+    color: black;
+}
+#ch4 {
+    color: black;
+    font-size: 16px;
+}
+#rh4 {
+    font-size: 14px;
+    color: black;
+}
+#body{
+    color: currentColor;
+    background-color: white;
+}
+.separator{
+background-color: snow;
+height: 3px;
+width: 25%;
+border: none;
+box-shadow: none;            
+}
