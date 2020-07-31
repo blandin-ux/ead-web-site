@@ -57,5 +57,7 @@ Route::get('/slides/{id}/edit','Local\SlideController@edit')->middleware('auth')
 Route::post('/slides/save','Local\SlideController@save')->middleware('auth');
 Route::get('/slides/{id}/open','Local\SlideController@open')->middleware('auth');
 Route::get('slides/{id}/close','Local\SlideController@close')->middleware('auth');
+//route slide Frontoffice
+Route::get('/frontoffice/slides','Local\Frontoffice\SlideController@index')->middleware('auth');
 //fin route slides
 //startbootstrap.com licen gpl apach

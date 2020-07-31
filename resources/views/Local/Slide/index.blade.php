@@ -1,3 +1,5 @@
+@extends('layouts.index')
+@section('page')
 <html>     
       <link rel="stylesheet" href="{{ asset('css\bootstrap.min.css')}}">
       <link rel="stylesheet" href="{{ asset('css\slide.css')}}">  
@@ -33,3 +35,4 @@
             </div>
         </div>
 </html>        
+@endsection
