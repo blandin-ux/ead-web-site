@@ -24,7 +24,7 @@ Traitement des reclamations
                     @foreach($local as $loc)
                     <tr>
                         <td><?=$loc->read? '<span class="badge badge-success">Msg répondu !</span>':'<span class="badge badge-danger">Non repondu</span>'?></td>
-                        <td>{{$loc->created_at}}</td>
+                        <td>{{$loc->created_at->format('d-m-j à H:m:s')}}</td>
                         <td>{{$loc->name}}</td>  
                         <td>{{$loc->type?$loc->type->name:"aucun"}}</td> 
                         <td>{{$loc->user?$loc->user->name:"aucun"}}</td>

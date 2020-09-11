@@ -14,9 +14,8 @@ class ReclamationController extends Controller
 {
     //
     public function index(){
-        $etudiant = Reclamation::OrderBy('id')->paginate(5);
-        $user = User::all();
-        return view('Etudiant/index')->with(compact('etudiant','user'));
+        $etudiant = Reclamation::OrderBy('id','DESC')->where('user_id',Auth::user()->id)->paginate(5);
+        return view('Etudiant/index')->with(compact('etudiant'));
         
     }
 
